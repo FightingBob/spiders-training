@@ -1,11 +1,13 @@
 from bs4 import BeautifulSoup
 import requests
+import time
 url_prefix = 'https://knewone.com/discover?page='
 infos = []
 
 # 获取单个页面数据
 def getAPage(url,data = None):
     web_data = requests.get(url)
+    time.sleep(1)
     soup = BeautifulSoup(web_data.text,'lxml')
     # print(soup)
 
